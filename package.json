@@ -1,6 +1,8 @@
 {
   "name": "react_firebox_database",
   "version": "0.1.0",
+  "main": "index.js",
+  "homepage": "https://digi-solutions-co-uk.github.io/update_payment_message",
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
@@ -9,6 +11,7 @@
     "@testing-library/user-event": "^13.5.0",
     "dotenv": "^16.5.0",
     "firebase": "^11.7.1",
+    "gh-pages": "^6.3.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.6.0",
@@ -21,7 +24,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [

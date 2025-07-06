@@ -1,6 +1,7 @@
 {
   "files": {
 <<<<<<< HEAD
+<<<<<<< HEAD
     "main.css": "/static/css/main.6539b8fc.css",
     "main.js": "/static/js/main.00a8cd93.js",
     "index.html": "/index.html",
@@ -21,5 +22,16 @@
     "static/css/main.6539b8fc.css",
     "static/js/main.fef35c6b.js"
 >>>>>>> 7bae92d (Updates)
+=======
+    "main.css": "/update_payment_message/static/css/main.6539b8fc.css",
+    "main.js": "/update_payment_message/static/js/main.fef35c6b.js",
+    "index.html": "/update_payment_message/index.html",
+    "main.6539b8fc.css.map": "/update_payment_message/static/css/main.6539b8fc.css.map",
+    "main.fef35c6b.js.map": "/update_payment_message/static/js/main.fef35c6b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6539b8fc.css",
+    "static/js/main.fef35c6b.js"
+>>>>>>> 51c2da0 (Updates)
   ]
 }

@@ -2,6 +2,8 @@
   "name": "react_firebox_database",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://digi-solutions-co-uk.github.io/update_payment_message/",
+  "index": "./src/index.js",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",

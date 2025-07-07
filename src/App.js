@@ -6,7 +6,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/update_payment_message" element={<Home />} />
       </Routes>
     </Router>
   );

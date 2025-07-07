@@ -8,7 +8,32 @@ const Home = () => {
     const [filteredUsers, setFilteredUsers] = useState({});
     const [loading, setLoading] = useState(true);
     const [searchQuery, setSearchQuery] = useState("");
+    const [newUserId, setNewUserId] = useState("");
 
+    const handleAddUser = async () => {
+        const trimmedId = newUserId.trim();
+        if (!trimmedId) return;
+
+        try {
+            const userRef = ref(database, `paymentWarning/${trimmedId}`);
+            await update(userRef, { notPaid: false });
+
+            // Update state locally
+            setUsers(prev => ({
+                ...prev,
+                [trimmedId]: { notPaid: false }
+            }));
+
+            setFilteredUsers(prev => ({
+                ...prev,
+                [trimmedId]: { notPaid: false }
+            }));
+
+            setNewUserId(""); // Clear input
+        } catch (error) {
+            console.error("Error adding new user:", error);
+        }
+    };
     const getData = async () => {
         try {
             const clientsRef = ref(database, "paymentWarning");
@@ -77,7 +102,21 @@ const Home = () => {
                 placeholder="Search by ID..."
                 className="w-full px-4 py-2 mb-6 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-blue-200"
             />
-
+            <div className="flex items-center gap-2 mb-6">
+                <input
+                    type="text"
+                    value={newUserId}
+                    onChange={(e) => setNewUserId(e.target.value)}
+                    placeholder="Enter new ID..."
+                    className="flex-1 px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-blue-200"
+                />
+                <button
+                    onClick={handleAddUser}
+                    className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+                >
+                    Add
+                </button>
+            </div>
             {loading ? (
                 <p className="text-center">Loading...</p>
             ) : (
